@@ -4,12 +4,15 @@ from pdf2image import convert_from_bytes
 import io
 import os
 from django.http import HttpResponse
-
+from dispenser.settings import CONVERTER_KEY
 converter_router = Router()
 
 @converter_router.post("/pdf-to-jpg")
 def convert_pdf_to_jpg(request, file: UploadedFile = File(...)):
     try:
+        if request.headers.get('Authorization') != CONVERTER_KEY:
+            return {"error": "Invalid authorization key"}
+        
         # 파일 이름에서 확장자를 제외한 부분 추출
         filename = os.path.splitext(file.name)[0]
         

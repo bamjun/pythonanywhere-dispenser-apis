@@ -17,8 +17,7 @@ if os.getenv('CHECK_LOCAL_MODE') == 'True':
 else:
     ALLOWED_HOSTS = ['dispenser.pythonanywhere.com']
 
-
-# Application definition
+CONVERTER_KEY = os.getenv('CONVERTER_KEY')
 
 INSTALLED_APPS = [
     "django.contrib.admin",

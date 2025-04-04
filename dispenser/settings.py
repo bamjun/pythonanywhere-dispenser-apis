@@ -11,7 +11,7 @@ if os.getenv('CHECK_DEV_MODE') == 'False':
 else:
     DEBUG = True
 
-if os.getenv('CHECK_DEV_MODE') == 'True':
+if os.getenv('CHECK_LOCAL_MODE') == 'True':
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 else:
     ALLOWED_HOSTS = ['dispenser.pythonanywhere.com']

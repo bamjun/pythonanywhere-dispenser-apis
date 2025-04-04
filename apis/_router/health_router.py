@@ -1,5 +1,4 @@
 from ninja import Router
-from django.http import JsonResponse
 import datetime
 
 health_router = Router()

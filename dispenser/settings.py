@@ -15,7 +15,7 @@ else:
 if os.getenv('CHECK_LOCAL_MODE') == 'True':
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 else:
-    ALLOWED_HOSTS = ['dispenser.pythonanywhere.com']
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 CONVERTER_KEY = os.getenv('CONVERTER_KEY')
 
